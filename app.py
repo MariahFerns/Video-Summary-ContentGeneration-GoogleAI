@@ -84,33 +84,31 @@ st.markdown('''
 ''')
 
 
-# Create form to take take api key and youtube link input
-with st.form('myform', clear_on_submit=True):
-  # Get api key
-  api_key = st.text_input('Enter Google API Key: ', type='password')
-  # Get YouTube link
-  youtube_link = st.text_input('Enter YouTube URL: ')
+# Get api key
+api_key = st.text_input('Enter Google API Key: ', type='password')
+# Get YouTube link
+youtube_link = st.text_input('Enter YouTube URL: ')
 
-  if youtube_link:
-    # Display the thumbnail for visual confirmation to the user that correct video has been fetched
-    v_id = youtube_link.split('v=')[1].split('&')[0]
-    thumbnail_url = f'http://img.youtube.com/vi/{v_id}/0.jpg'
-    st.image(thumbnail_url, caption='Video Thumbnail', use_column_width=True)
+if youtube_link:
+  # Display the thumbnail for visual confirmation to the user that correct video has been fetched
+  v_id = youtube_link.split('v=')[1].split('&')[0]
+  thumbnail_url = f'http://img.youtube.com/vi/{v_id}/0.jpg'
+  st.image(thumbnail_url, caption='Video Thumbnail', use_column_width=True)
 
-    # Fetch transcript
-    full_transcript = fetch_transcript(youtube_link)
+  # Fetch transcript
+  full_transcript = fetch_transcript(youtube_link)
 
-    # Create 2 buttons - for summarization and for generating blog post
-    col1, col2 = st.columns(2)
-    with col1:
-      if st.form_submit_button('Get Summary'):
-        if full_transcript:
-          summary = generate_video_summary(api_key, full_transcript, prompt)
-          st.markdown('## Video Summary:')
-          st.write(summary)
-    with col2:
-      if st.form_submit_button('Get Blog Post'):
-        if full_transcript:
-          blog_post = generate_video_blog(api_key, full_transcript, prompt)
-          st.markdown('## Blog Post:')
+  # Create 2 buttons - for summarization and for generating blog post
+  col1, col2 = st.columns(2)
+  with col1:
+    if st.form_submit_button('Get Summary'):
+      if full_transcript:
+        summary = generate_video_summary(api_key, full_transcript, prompt)
+        st.markdown('## Video Summary:')
+        st.write(summary)
+  with col2:
+    if st.form_submit_button('Get Blog Post'):
+      if full_transcript:
+        blog_post = generate_video_blog(api_key, full_transcript, prompt)
+        st.markdown('## Blog Post:')
           st.write(blog_post)
