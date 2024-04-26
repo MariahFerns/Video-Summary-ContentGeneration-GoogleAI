@@ -101,13 +101,13 @@ if youtube_link:
   # Create 2 buttons - for summarization and for generating blog post
   col1, col2 = st.columns(2)
   with col1:
-    if st.form_submit_button('Get Summary'):
+    if st.button('Get Summary'):
       if full_transcript:
         summary = generate_video_summary(api_key, full_transcript, prompt)
         st.markdown('## Video Summary:')
         st.write(summary)
   with col2:
-    if st.form_submit_button('Get Blog Post'):
+    if st.button('Get Blog Post'):
       if full_transcript:
         blog_post = generate_video_blog(api_key, full_transcript, prompt)
         st.markdown('## Blog Post:')
