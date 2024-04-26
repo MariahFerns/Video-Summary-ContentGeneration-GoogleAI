@@ -40,7 +40,7 @@ def generate_video_summary(api_key, full_transcript, prompt):
 
 def generate_video_blog(api_key, full_transcript, prompt):
   # Fetch the AI generated summary that will be used to make the blog post
-  summary = generate_gemini_content(api_key, full_transcript, prompt)
+  summary = generate_video_summary(api_key, full_transcript, prompt)
 
   # Specify the sections that you want the blog post to have
   blog_post = f'''
