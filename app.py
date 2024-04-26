@@ -111,4 +111,4 @@ if youtube_link:
       if full_transcript:
         blog_post = generate_video_blog(api_key, full_transcript, prompt)
         st.markdown('## Blog Post:')
-          st.write(blog_post)
+        st.write(blog_post)
