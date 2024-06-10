@@ -43,7 +43,9 @@ def generate_video_blog(api_key, full_transcript, prompt):
   summary = generate_video_summary(api_key, full_transcript, prompt)
 
   # Specify the sections that you want the blog post to have
-  blog_post = f'''
+  blog_post_prompt = f''' You are a Gen-Z blog post writer. Your job is to take the summary provided and generate
+  a compelling blog post that follows the below style format. The provided summary should be updated where mentioned in the format.
+  
   ## Introduction
   Start with an engaging introduction that hooks the reader, providing a brief overview of the video's topic
   and why it's worth reading about.
@@ -65,7 +67,15 @@ def generate_video_blog(api_key, full_transcript, prompt):
 
   '''
 
-  return blog_post
+  # 1. Configure the api key
+  genai.configure(api_key = api_key)
+  # 2. Set the model to be used
+  model = genai.GenerativeModel('gemini-pro')
+  # 3. Query the model using the promt and transcript
+  blog_post = model.generate_content(blog_post_prompt + summary)
+
+  return blog_post.text
+
 
 # Build the Streamlit UI App
 
