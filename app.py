@@ -49,7 +49,7 @@ def generate_video_blog(api_key, full_transcript, prompt):
   and why it's worth reading about.
 
   ## Participants
-  Provide a quick concise introduction of the participants in the video. Make it wiity while remaining polite.
+  Provide a quick concise introduction of the participants in the video. Make it witty while remaining polite.
 
   ## Key Highlights
   - Highlight the most impactful points or insights from the video.
