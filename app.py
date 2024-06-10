@@ -71,7 +71,7 @@ def generate_video_blog(api_key, full_transcript, prompt):
 
 
 # Set Title
-st.title('Video to text content generation using Google Gemini Pro')
+st.title('🔖Video to text content generation using Google Gemini Pro')
 
 # Instructions to get Google API Key
 st.markdown('''
