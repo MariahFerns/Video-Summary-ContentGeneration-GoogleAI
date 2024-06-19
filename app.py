@@ -70,7 +70,7 @@ def generate_video_blog(api_key, full_transcript, prompt, blog_post_prompt):
   # 2. Set the model to be used
   model = genai.GenerativeModel('gemini-pro')
   # 3. Query the model using the promt and transcript
-  blog_post = model.generate_content(blog_post_prompt + summary)
+  blog_post = model.generate_content(blog_post_prompt + summary.text)
 
   return blog_post.text
 
