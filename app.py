@@ -13,28 +13,28 @@ prompt = '''
 '''
 
 # Specify the sections that you want the blog post to have
- blog_post_prompt = f''' You are a Gen-Z blog post writer. Your job is to take the summary provided and generate
- a compelling blog post that follows the below style format. The provided summary should be updated where mentioned in the format.
- 
- ## Introduction
- Start with an engaging introduction that hooks the reader, providing a brief overview of the video's topic
- and why it's worth reading about.
+blog_post_prompt = f''' You are a Gen-Z blog post writer. Your job is to take the summary provided and generate
+a compelling blog post that follows the below style format. The provided summary should be updated where mentioned in the format.
 
- ## Participants
- Provide a quick concise introduction of the participants in the video. Make it witty while remaining polite.
+## Introduction
+Start with an engaging introduction that hooks the reader, providing a brief overview of the video's topic
+and why it's worth reading about.
 
- ## Key Highlights
- - Highlight the most impactful points or insights from the video.
- - Offer quick, bullet-point summaries for readers who want the essence of the video's content.
+## Participants
+Provide a quick concise introduction of the participants in the video. Make it witty while remaining polite.
 
- ## Main Content
- Give this section an appropriate header that is catchy and engaging and draws the audience to read more.
- {summary}
+## Key Highlights
+- Highlight the most impactful points or insights from the video.
+- Offer quick, bullet-point summaries for readers who want the essence of the video's content.
 
- ## Conclusion
- Wrap it up by giving a summary of the points discussed, reflecting their importance and also suggest
- similar reading content or action based on the the video.
- '''
+## Main Content
+Give this section an appropriate header that is catchy and engaging and draws the audience to read more.
+{summary}
+
+## Conclusion
+Wrap it up by giving a summary of the points discussed, reflecting their importance and also suggest
+similar reading content or action based on the the video.
+'''
 
 # Define a function to extract transcript from a YouTube URL
 
