@@ -14,7 +14,7 @@ prompt = '''
 
 # Specify the sections that you want the blog post to have
 blog_post_prompt = f''' You are a Gen-Z blog post writer. Your job is to take the summary provided and generate
-a compelling blog post that follows the below style format. The provided summary should be updated where mentioned in the format.
+a compelling blog post that follows the below style format.
 
 ## Introduction
 Start with an engaging introduction that hooks the reader, providing a brief overview of the video's topic
@@ -29,7 +29,7 @@ Provide a quick concise introduction of the participants in the video. Make it w
 
 ## Main Content
 Give this section an appropriate header that is catchy and engaging and draws the audience to read more.
-{summary}
+Use the provided summary as the main content.
 
 ## Conclusion
 Wrap it up by giving a summary of the points discussed, reflecting their importance and also suggest
