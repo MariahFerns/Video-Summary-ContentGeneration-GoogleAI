@@ -62,7 +62,7 @@ def generate_video_summary(api_key, full_transcript, prompt):
 
 # Define a function for generating blog post
 
-def generate_video_blog(api_key, full_transcript, prompt):
+def generate_video_blog(api_key, full_transcript, prompt, blog_post_prompt):
   # Fetch the AI generated summary that will be used to make the blog post
   summary = generate_video_summary(api_key, full_transcript, prompt)
   # 1. Configure the api key
@@ -70,7 +70,7 @@ def generate_video_blog(api_key, full_transcript, prompt):
   # 2. Set the model to be used
   model = genai.GenerativeModel('gemini-pro')
   # 3. Query the model using the promt and transcript
-  blog_post = model.generate_content(prompt + summary)
+  blog_post = model.generate_content(blog_post_prompt + summary)
 
   return blog_post.text
 
@@ -117,6 +117,6 @@ if youtube_link:
   with col2:
     if st.button('Get Blog Post'):
       if full_transcript:
-        blog_post = generate_video_blog(api_key, full_transcript, blog_post_prompt)
+        blog_post = generate_video_blog(api_key, full_transcript, prompt, blog_post_prompt)
         st.markdown('## Blog Post:')
         st.write(blog_post)
